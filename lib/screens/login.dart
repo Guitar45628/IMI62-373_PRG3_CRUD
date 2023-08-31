@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:http/http.dart' as http;
+import 'package:flutter/material.dart';
+import 'package:test_crud/config.dart';
 import 'package:test_crud/models/users.dart';
+import 'package:http/http.dart' as http;
 import 'package:test_crud/screens/home.dart';
-
-import '../config.dart';
-import '../main.dart';
 
 class Login extends StatefulWidget {
   static const routeName = '/login';
@@ -23,7 +21,7 @@ class _LoginState extends State<Login> {
     var params = {"email": user.email, "password": user.password};
     var url = Uri.http(Configure.server, "users", params);
     var resp = await http.get(url);
-    print("This is " + resp.body);
+    // print("This is " + resp.body);
     List<Users> login_result = usersFromJson(resp.body);
     // print(login_result.length);
     if (login_result.isEmpty) {
@@ -49,15 +47,17 @@ class _LoginState extends State<Login> {
                 // textHeader(),
                 emailInputField(),
                 passwordInputField(),
-                const SizedBox(height: 10),
-                Row(
-                  children: [
-                    submitButton(),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    registerLink()
-                  ],
+                const SizedBox(height: 20),
+                Center(
+                  child: Column(
+                    children: [
+                      submitButton(),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      registerLink()
+                    ],
+                  ),
                 )
               ],
             )),
@@ -102,7 +102,7 @@ class _LoginState extends State<Login> {
   }
 
   Widget submitButton() {
-    return ElevatedButton(
+    return FilledButton.tonal(
       onPressed: () {
         if (_formkey.currentState!.validate()) {
           _formkey.currentState!.save();
@@ -115,10 +115,17 @@ class _LoginState extends State<Login> {
   }
 
   Widget registerLink() {
-    return OutlinedButton(
+    return TextButton(
       child: const Text("Sign Up"),
-      onPressed: () {
-        print("Guitar");
+      onPressed: () async {
+        String result = await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Home(),
+            ));
+        if (result == "refresh") {
+          // getUser();
+        }
       },
     );
   }

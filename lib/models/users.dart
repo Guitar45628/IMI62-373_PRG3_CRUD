@@ -12,26 +12,30 @@ class Users {
     int? id;
     String? email;
     String? password;
-    String? name;
+    String? fullname;
+    String? gender;
 
     Users({
         this.id,
         this.email,
         this.password,
-        this.name,
+        this.fullname,
+        this.gender,
     });
 
     factory Users.fromJson(Map<String, dynamic> json) => Users(
         id: json["id"],
         email: json["email"],
         password: json["password"],
-        name: json["name"],
+        fullname: json["fullname"],
+        gender: json["gender"],
     );
 
     Map<String, dynamic> toJson() => {
         "id": id,
         "email": email,
         "password": password,
-        "name": name,
+        "fullname": fullname,
+        "gender": gender,
     };
 }

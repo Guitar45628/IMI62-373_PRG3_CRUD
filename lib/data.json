@@ -1,14 +1,67 @@
 {
-    "users":[{
-        "id":1,
-        "email":"dechnarong45628@gmail.com",
-        "password":"00000000",
-        "name":"Dechnarong Matham"
+  "users": [
+    {
+      "id": 1,
+      "email": "dechnarong45628@gmail.com",
+      "password": "00000000",
+      "fullname": "Dechnarong Matham",
+      "gender": "Male"
     },
     {
-        "id":2,
-        "email":"t@t.c",
-        "password":"0000",
-        "name":"Test Test"
-    }]
+      "id": 2,
+      "email": "user2@example.com",
+      "password": "abcdef",
+      "fullname": "User 2",
+      "gender": "Female"
+    },
+    {
+      "id": 3,
+      "email": "user3@example.com",
+      "password": "xyz123",
+      "fullname": "User 3",
+      "gender": "Male"
+    },
+    {
+      "id": 4,
+      "email": "user4@example.com",
+      "password": "password123",
+      "fullname": "User 4",
+      "gender": "Female"
+    },
+    {
+      "id": 5,
+      "email": "user5@example.com",
+      "password": "qwerty",
+      "fullname": "User 5",
+      "gender": "Male"
+    },
+    {
+      "id": 6,
+      "email": "user6@example.com",
+      "password": "testpass",
+      "fullname": "User 6",
+      "gender": "Female"
+    },
+    {
+      "id": 7,
+      "email": "dechnaro@jfjg.com",
+      "password": "12",
+      "fullname": "กีตาร์2",
+      "gender": "Male"
+    },
+    {
+      "id": 8,
+      "email": "jfiji@kfopgk.crg",
+      "password": "224",
+      "fullname": "เดเด",
+      "gender": "Male"
+    },
+    {
+      "id": 9,
+      "email": "deded@fdf.cdv",
+      "password": "efe",
+      "fullname": "Dec",
+      "gender": "Female"
+    }
+  ]
 }
